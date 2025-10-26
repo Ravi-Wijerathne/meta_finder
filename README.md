@@ -44,7 +44,7 @@ Extract metadata from **ANY** file type and save it to a `.txt` file!
 
 ### 1. Clone the repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Ravi-Wijerathne/meta_finder.git
 cd meta_finder
 ```
 
