@@ -1,0 +1,116 @@
+# .gitignore for MetaFinder
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.vs/
+*.code-workspace
+
+# Test and example files (not needed for core functionality)
+test_tool.py
+example_usage.py
+test_*.txt
+test_*.png
+test_*.jpg
+test_*.dat
+test_*.mp4
+test_*.mp3
+test_*.pdf
+*_metadata.txt
+
+# Documentation files (except README.md)
+QUICKSTART.md
+FEATURES.md
+PROJECT_SUMMARY.md
+START_HERE.md
+
+# Windows launcher script
+run.bat
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+*.lnk
+
+# Logs
+*.log
+
+# Output files
+output*.txt
+metadata_*.txt
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# Translations
+*.mo
+*.pot
+
+# Database
+*.db
+*.sqlite3
+
+# Media files (samples)
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.mp3
+*.flac
+*.wav
+*.ogg
