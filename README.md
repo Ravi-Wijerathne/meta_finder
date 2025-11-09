@@ -4,6 +4,30 @@
 
 Extract metadata from **ANY** file type and save it to a `.txt` file!
 
+## 📥 Quick Download (Windows)
+
+**Ready to use? Download the pre-built versions:**
+
+### 🎯 Portable Version (Recommended)
+[![Download Portable](https://img.shields.io/badge/Download-Portable%20v1.0.0-blue?style=for-the-badge&logo=windows)](https://github.com/Ravi-Wijerathne/meta_finder/releases/latest/download/MetaFinder-Portable-v1.0.0.zip)
+
+- ✅ Single executable file (~24 MB)
+- ✅ No installation required
+- ✅ Run from USB or any folder
+- ✅ Extract and double-click `MetaFinder.exe`
+
+### 💼 Installer Version
+[![Download Installer](https://img.shields.io/badge/Download-Installer%20v1.0.0-green?style=for-the-badge&logo=windows)](https://github.com/Ravi-Wijerathne/meta_finder/releases/latest/download/MetaFinder-Installer-v1.0.0.zip)
+
+- ✅ Full application bundle (~25 MB)
+- ✅ All dependencies included
+- ✅ For advanced users
+- ✅ Extract and run `MetaFinder.exe` from the folder
+
+> **New to MetaFinder?** Download the Portable version for the easiest experience!
+
+---
+
 ## 🎯 Features
 
 - ✅ **Universal File Support** - Works with ANY file type
@@ -40,7 +64,27 @@ Extract metadata from **ANY** file type and save it to a `.txt` file!
 - **ANY OTHER FILE TYPE**
 - File hashes (MD5, SHA256), magic bytes, binary inspection
 
-## 🚀 Installation
+---
+
+## 🚀 Installation Options
+
+### Option 1: Download Pre-built Release (Easiest) ⭐
+
+**For Windows users who just want to use the tool:**
+
+1. Go to [Releases](https://github.com/Ravi-Wijerathne/meta_finder/releases/latest)
+2. Download either:
+   - `MetaFinder-Portable-v1.0.0.zip` (recommended) - Single executable
+   - `MetaFinder-Installer-v1.0.0.zip` - Full application bundle
+3. Extract the ZIP file
+4. Run `MetaFinder.exe`
+5. Start extracting metadata!
+
+No Python installation or dependencies needed! ✨
+
+### Option 2: Run from Source (For Developers)
+
+**If you want to run or modify the source code:**
 
 ### 1. Clone the repository
 ```bash
@@ -59,9 +103,30 @@ pip install -r requirements.txt
 - Download from: https://ffmpeg.org/download.html
 - Add to system PATH
 
+### 3. Run the application
+```bash
+python main.py
+```
+
 ## 📖 Usage
 
-### GUI Mode (Recommended)
+### Using Pre-built Release (Windows)
+
+1. **Launch the application**
+   - Double-click `MetaFinder.exe`
+   
+2. **Extract metadata**
+   - Click **"Browse"** to select any file
+   - Click **"Extract Metadata"**
+   - View the results in the preview area
+   
+3. **Save results**
+   - Click **"Save to Text"** to export metadata to a `.txt` file
+   - Files are saved in the same folder as your input file
+
+That's it! No additional steps needed. 🎉
+
+### Running from Source (Developers)
 
 Run the application:
 ```bash
