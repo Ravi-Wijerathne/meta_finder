@@ -54,9 +54,21 @@ QUICKSTART.md
 FEATURES.md
 PROJECT_SUMMARY.md
 START_HERE.md
+RELEASE_GUIDE.md
 
 # Windows launcher script
 run.bat
+
+# Release builds and distribution files
+release/dist/
+release/build/
+release/builds/
+release/*.spec
+release/*.iss
+release/*.exe
+release/*.zip
+release/*.msi
+release/final_release/
 
 # OS
 .DS_Store
