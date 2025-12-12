@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=MetaFinder
+GenericName=Metadata Extractor
+Comment=Universal Metadata Extraction Tool
+Exec=metafinder %f
+Icon=metafinder
+Categories=Utility;FileTools;
+Keywords=metadata;extractor;exif;tags;
+Terminal=false
+StartupNotify=true
+MimeType=inode/directory;

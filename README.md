@@ -241,6 +241,33 @@ Contributions are welcome! Feel free to:
 - Enhance the GUI
 - Fix bugs
 
+## 🏗️ Building Releases
+
+Want to build MetaFinder packages yourself? The `release/` directory contains build scripts for all platforms.
+
+### Windows
+```powershell
+cd release
+.\build_all.ps1          # Build all (installer + portable)
+.\build_portable.ps1     # Portable version only
+```
+
+### Linux
+```bash
+cd release
+./build_all_linux.sh --all        # All Linux packages
+./build_all_linux.sh --deb        # Ubuntu/Mint/Debian
+./build_all_linux.sh --rpm        # Fedora/RHEL
+./build_all_linux.sh --portable   # Universal Linux
+```
+
+**Supported Linux distributions:**
+- DEB packages for Ubuntu, Linux Mint, Debian
+- RPM packages for Fedora, RHEL, CentOS
+- Portable tarball for any Linux distribution
+
+📖 **Full documentation:** See [`release/README.md`](release/README.md) for detailed build instructions, prerequisites, and troubleshooting.
+
 ## 📝 License
 
 This project is open-source and available for educational purposes.
