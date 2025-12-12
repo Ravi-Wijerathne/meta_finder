@@ -99,11 +99,21 @@ pip install -r requirements.txt
 
 **Note for Windows users:** The `python-magic-bin` package is specifically for Windows and provides the `libmagic` library.
 
-### Optional: FFmpeg (for advanced video metadata)
-- Download from: https://ffmpeg.org/download.html
-- Add to system PATH
-
 ### 3. Run the application
+
+**Linux/Mac (Automated Setup):**
+```bash
+chmod +x run_metafinder.sh
+./run_metafinder.sh
+```
+
+The script automatically:
+- Checks and installs Python 3
+- Creates virtual environment
+- Installs all dependencies
+- Launches MetaFinder
+
+**Manual (All platforms):**
 ```bash
 python main.py
 ```
