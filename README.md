@@ -101,6 +101,11 @@ pip install -r requirements.txt
 
 ### 3. Run the application
 
+**Windows**
+```bash
+python run_metafinder.py
+```
+
 **Linux/Mac (Automated Setup):**
 ```bash
 chmod +x run_metafinder.sh
