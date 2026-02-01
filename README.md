@@ -246,6 +246,11 @@ Contributions are welcome! Feel free to:
 - Enhance the GUI
 - Fix bugs
 
+Please ensure any pull requests:
+1. Follow the existing code style
+2. Include appropriate documentation
+3. Add tests where applicable
+
 ## 🏗️ Building Releases
 
 Want to build MetaFinder packages yourself? The `release/` directory contains build scripts for all platforms.
@@ -275,7 +280,9 @@ cd release
 
 ## 📝 License
 
-This project is open-source and available for educational purposes.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Copyright (c) 2026 Ravi Wijerathne
 
 ## ⚠️ Notes
 
