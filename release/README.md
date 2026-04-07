@@ -151,7 +151,7 @@ tar -xzf MetaFinder-Portable-v1.0.0-linux.tar.gz
 cd MetaFinder-Portable-v1.0.0-linux
 
 # Run the launcher
-./run_metafinder.sh
+./scripts/run_metafinder.sh
 ```
 
 ---

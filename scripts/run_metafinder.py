@@ -12,12 +12,13 @@ import platform
 import shutil
 from pathlib import Path
 
-# Script directory
-SCRIPT_DIR = Path(__file__).parent.resolve()
-os.chdir(SCRIPT_DIR)
+# Directories
+SCRIPTS_DIR = Path(__file__).parent.resolve()
+PROJECT_ROOT = SCRIPTS_DIR.parent
+os.chdir(PROJECT_ROOT)
 
 # Virtual environment directory
-VENV_DIR = SCRIPT_DIR / "venv"
+VENV_DIR = PROJECT_ROOT / "venv"
 
 # Color codes for output (ANSI escape codes)
 class Colors:
@@ -262,7 +263,7 @@ def install_dependencies(python_cmd, pip_cmd):
     """Install Python dependencies"""
     log_info("Checking Python dependencies...")
     
-    requirements_file = SCRIPT_DIR / 'requirements.txt'
+    requirements_file = PROJECT_ROOT / 'requirements.txt'
     
     if not requirements_file.exists():
         log_error("requirements.txt not found!")
@@ -274,7 +275,7 @@ def install_dependencies(python_cmd, pip_cmd):
     
     # Modify requirements based on OS
     system = platform.system()
-    temp_req_file = SCRIPT_DIR / '.requirements_temp.txt'
+    temp_req_file = PROJECT_ROOT / '.requirements_temp.txt'
     
     if system == 'Linux' or system == 'Darwin':
         log_info(f"Detected {system} - using python-magic instead of python-magic-bin...")
@@ -376,7 +377,7 @@ def launch_metafinder(python_cmd):
     log_info("Launching MetaFinder...")
     print()
     
-    main_file = SCRIPT_DIR / 'main.py'
+    main_file = PROJECT_ROOT / 'main.py'
     
     if not main_file.exists():
         log_error("main.py not found!")
