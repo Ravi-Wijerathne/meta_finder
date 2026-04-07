@@ -15,11 +15,11 @@ Extract metadata from common file types and export results to a `.txt` file.
 ```bash
 git clone https://github.com/Ravi-Wijerathne/meta_finder.git
 cd meta_finder
-pip install -r requirements.txt
 python scripts/run_metafinder.py
 ```
 
 `scripts/run_metafinder.py` is the recommended launcher.
+It automatically creates (or repairs) the `venv` virtual environment and installs missing dependencies before launching MetaFinder.
 
 ## Usage
 
