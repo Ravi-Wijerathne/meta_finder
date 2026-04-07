@@ -184,6 +184,7 @@ check_system_libraries() {
 # Check and setup virtual environment
 setup_virtual_environment() {
     log_info "Checking virtual environment..."
+    VENV_PYTHON="$VENV_DIR/bin/python"
     
     # Check if python3-venv is installed
     if ! $PYTHON_CMD -m venv --help >/dev/null 2>&1; then
@@ -201,11 +202,15 @@ setup_virtual_environment() {
         fi
     fi
     
-    # Create virtual environment if it doesn't exist
+    # Create or repair virtual environment when missing or incomplete
     if [ ! -d "$VENV_DIR" ]; then
         log_info "Creating virtual environment..."
         $PYTHON_CMD -m venv "$VENV_DIR"
         log_success "Virtual environment created at: $VENV_DIR"
+    elif [ ! -x "$VENV_PYTHON" ]; then
+        log_warning "Virtual environment exists but looks incomplete. Rebuilding..."
+        $PYTHON_CMD -m venv --clear "$VENV_DIR"
+        log_success "Virtual environment rebuilt successfully"
     else
         log_success "Virtual environment already exists"
     fi
@@ -213,6 +218,11 @@ setup_virtual_environment() {
     # Update Python command to use venv
     PYTHON_CMD="$VENV_DIR/bin/python"
     PIP_CMD="$VENV_DIR/bin/pip"
+
+    if [ ! -x "$PYTHON_CMD" ]; then
+        log_error "Virtual environment Python executable not found after setup"
+        exit 1
+    fi
     
     log_success "Using virtual environment"
 }

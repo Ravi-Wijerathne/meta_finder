@@ -234,18 +234,6 @@ def setup_virtual_environment(python_cmd):
             log_info("  Fedora: sudo dnf install python3-virtualenv")
         sys.exit(1)
     
-    # Create virtual environment if it doesn't exist
-    if not VENV_DIR.exists():
-        log_info("Creating virtual environment...")
-        result = run_command([python_cmd, '-m', 'venv', str(VENV_DIR)])
-        if result and result.returncode == 0:
-            log_success(f"Virtual environment created at: {VENV_DIR}")
-        else:
-            log_error("Failed to create virtual environment!")
-            sys.exit(1)
-    else:
-        log_success("Virtual environment already exists")
-    
     # Determine paths based on OS
     system = platform.system()
     if system == 'Windows':
@@ -254,6 +242,30 @@ def setup_virtual_environment(python_cmd):
     else:
         venv_python = VENV_DIR / 'bin' / 'python'
         venv_pip = VENV_DIR / 'bin' / 'pip'
+
+    # Create or repair virtual environment when missing or incomplete
+    if not VENV_DIR.exists():
+        log_info("Creating virtual environment...")
+        result = run_command([python_cmd, '-m', 'venv', str(VENV_DIR)])
+        if result and result.returncode == 0:
+            log_success(f"Virtual environment created at: {VENV_DIR}")
+        else:
+            log_error("Failed to create virtual environment!")
+            sys.exit(1)
+    elif not venv_python.exists():
+        log_warning("Virtual environment exists but looks incomplete. Rebuilding...")
+        result = run_command([python_cmd, '-m', 'venv', '--clear', str(VENV_DIR)])
+        if result and result.returncode == 0:
+            log_success("Virtual environment rebuilt successfully")
+        else:
+            log_error("Failed to rebuild virtual environment!")
+            sys.exit(1)
+    else:
+        log_success("Virtual environment already exists")
+
+    if not venv_python.exists():
+        log_error("Virtual environment Python executable not found after setup")
+        sys.exit(1)
     
     log_success("Using virtual environment")
     return str(venv_python), str(venv_pip)
@@ -367,7 +379,7 @@ except ImportError as e:
             log_error(result.stdout + result.stderr)
         log_info("Attempting to reinstall dependencies...")
         
-        requirements_file = SCRIPT_DIR / 'requirements.txt'
+        requirements_file = PROJECT_ROOT / 'requirements.txt'
         run_command([python_cmd, '-m', 'pip', 'install', '--force-reinstall', '-r', str(requirements_file)], capture_output=False)
         return False
 
