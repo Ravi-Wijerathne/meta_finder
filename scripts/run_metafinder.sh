@@ -14,12 +14,13 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# Script directory
+# Script and project directories
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-cd "$SCRIPT_DIR"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+cd "$PROJECT_ROOT"
 
 # Virtual environment directory
-VENV_DIR="$SCRIPT_DIR/venv"
+VENV_DIR="$PROJECT_ROOT/venv"
 
 # Log functions
 log_info() {
@@ -226,7 +227,7 @@ install_dependencies() {
     fi
     
     # Create a temporary requirements file for Linux
-    TEMP_REQ="$SCRIPT_DIR/.requirements_temp.txt"
+    TEMP_REQ="$PROJECT_ROOT/.requirements_temp.txt"
     
     # Check if all packages are installed
     log_info "Verifying installed packages..."

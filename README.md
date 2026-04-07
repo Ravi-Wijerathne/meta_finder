@@ -16,10 +16,10 @@ Extract metadata from common file types and export results to a `.txt` file.
 git clone https://github.com/Ravi-Wijerathne/meta_finder.git
 cd meta_finder
 pip install -r requirements.txt
-python run_metafinder.py
+python scripts/run_metafinder.py
 ```
 
-`run_metafinder.py` is the recommended launcher.
+`scripts/run_metafinder.py` is the recommended launcher.
 
 ## Usage
 
