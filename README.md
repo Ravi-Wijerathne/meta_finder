@@ -27,6 +27,21 @@ It automatically creates (or repairs) the `venv` virtual environment and install
 2. Click **Extract Metadata**
 3. Click **Save to Text** to export results
 
+## Testing
+
+Run the test suite with pytest:
+
+```bash
+# Run all tests
+python -m pytest tests/ -v
+
+# Run with coverage report
+python -m pytest tests/ --cov=utils --cov=extractors --cov-report=term-missing
+
+# Run specific test file
+python -m pytest tests/test_image_extractor.py -v
+```
+
 ## License
 
 MIT License - see [LICENSE](LICENSE).
